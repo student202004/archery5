@@ -60,7 +60,7 @@ function draw() {
   for (var i = 0; i < playerArrows.length; i++) {
     if (playerArrows[i] !== undefined) {
       playerArrows[i].display();
-    }
+    
     var Board1Collision = Matter.SAT.collides(board1.body,playerArrows[i].body)
     var Board2Collision = Matter.SAT.collides(board1.body,playerArrows[i].body)
     if(Board1Collision.collided || Board2Collision.collided){
@@ -72,6 +72,7 @@ function draw() {
     if(posX>width||posY>height){
       if(!playerArrows[i].isRemoved){
         playerArrows[i].remove(i)
+      }
     }
   }
 }
